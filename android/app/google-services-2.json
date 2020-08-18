@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "301656398018",
+    "firebase_url": "https://diet-plus-4a480.firebaseio.com",
+    "project_id": "diet-plus-4a480",
+    "storage_bucket": "diet-plus-4a480.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301656398018:android:f79480bc80d78b8090435b",
+        "android_client_info": {
+          "package_name": "com.example.diet_plus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301656398018-1tmgqtbucps0n28q3ehds08129ehljr5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiVx4W1NgIk7mpM6wsb6jMmyxNee5B2y4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301656398018-1tmgqtbucps0n28q3ehds08129ehljr5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "301656398018-ic01cso2ech48f1g96t7mftcseivi32d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dietplus"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
