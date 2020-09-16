@@ -8,7 +8,7 @@ class RadialPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..strokeWidth = 10
+      ..strokeWidth = 8
       ..color = Color(0xFF9C27B0)
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
@@ -16,7 +16,7 @@ class RadialPainter extends CustomPainter {
     Offset center = Offset(size.width / 2, size.height / 2);
     double relativeProgress = 360 * progress;
     //canvas.drawCircle(center, size.width / 2, paint);
-    canvas.drawArc(Rect.fromCircle(center: center, radius: size.width / 2),
+    canvas.drawArc(Rect.fromCircle(center: center, radius: size.width / 2.5),
         math.radians(-90), math.radians(-relativeProgress), false, paint);
   }
 

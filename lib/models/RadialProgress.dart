@@ -8,7 +8,9 @@ class RadialProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: RadialPainter(progress: 0.7),
+      painter: RadialPainter(
+          progress: 0.7
+      ),
       child: Container(
           height: height,
           width: width,

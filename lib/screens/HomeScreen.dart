@@ -167,7 +167,7 @@ class _Fragment3State extends State<Fragment3> {
                       children: <Widget>[
                         RadialProgress(
                           width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height/1.9 * 0.4,
                           progress: 0.7,
                         ),
                         SizedBox(

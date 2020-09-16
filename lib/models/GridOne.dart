@@ -31,7 +31,7 @@ class _GridOneState extends State<GridOne> {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        "DAY $index",
+                        "DAY " + (index += 1).toString(),
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
