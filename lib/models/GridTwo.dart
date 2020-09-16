@@ -10,6 +10,7 @@ class GridTwo extends StatefulWidget {
 class _GridTwoState extends State<GridTwo> {
   int index = 1;
   Color _iconColor = Colors.grey[800];
+  List<Color> _iconColorList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class _GridTwoState extends State<GridTwo> {
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           children: List.generate(6, (index) {
+            _iconColorList.add(_iconColor);
             return Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
@@ -31,7 +33,7 @@ class _GridTwoState extends State<GridTwo> {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        "Week $index",
+                        "Week " + (index + 1).toString(),
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -41,12 +43,12 @@ class _GridTwoState extends State<GridTwo> {
                       subtitle: IconButton(
                           icon: Icon(
                             Icons.assignment_turned_in,
-                            color: _iconColor,
+                            color: _iconColorList[index],
                             size: 30,
                           ),
                           onPressed: () {
                             setState(() {
-                              _iconColor = Colors.purple[500];
+                              _iconColorList[index] = Colors.purple[500];
                             });
                           }),
                     )
