@@ -10,6 +10,7 @@ class GridOne extends StatefulWidget {
 class _GridOneState extends State<GridOne> {
   int index = 1;
   Color _iconColor = Colors.grey[800];
+  List<Color> _iconColorList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class _GridOneState extends State<GridOne> {
           crossAxisCount: 3,
           crossAxisSpacing: 10,
           children: List.generate(30, (index) {
+            _iconColorList.add(_iconColor);
             return Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
@@ -31,7 +33,7 @@ class _GridOneState extends State<GridOne> {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        "DAY " + (index += 1).toString(),
+                        "DAY " + (index + 1).toString(),
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -41,12 +43,12 @@ class _GridOneState extends State<GridOne> {
                       subtitle: IconButton(
                           icon: Icon(
                             Icons.assignment_turned_in,
-                            color: _iconColor,
+                            color: _iconColorList[index],
                             size: 30,
                           ),
                           onPressed: () {
                             setState(() {
-                              _iconColor = Colors.purple[500];
+                              _iconColorList[index] = Colors.purple[500];
                             });
                           }),
                     )
