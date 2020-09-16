@@ -1,6 +1,7 @@
 import 'package:diet_plus/screens/HomeScreen.dart';
 import 'package:diet_plus/screens/SignupPage.dart';
 import 'package:diet_plus/services/auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+
+  bool _creating = false;
 
   @override
   Widget build(BuildContext context) {
@@ -81,10 +84,11 @@ class _LoginPageState extends State<LoginPage> {
                                     top: BorderSide(color: Colors.black),
                                     left: BorderSide(color: Colors.black),
                                     right: BorderSide(color: Colors.black))),
-                            child: MaterialButton(
+                            child: !_creating ? MaterialButton(
                               minWidth: double.infinity,
                               height: 60,
                               onPressed: () async {
+                                setState(() => _creating = true);
                                 if (_emailController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
                                   final authService = AuthService();
                                   final user = await authService.login(email: _emailController.text, password: _passwordController.text);
@@ -104,9 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                                     content: Text("Please fill login details"),
                                   ));
                                 }
-
-
-
+                                setState(() => _creating = false);
                               },
                               color: Colors.redAccent,
                               shape: RoundedRectangleBorder(
@@ -114,7 +116,8 @@ class _LoginPageState extends State<LoginPage> {
                               child: Text("Login",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w600, fontSize: 18)),
-                            ),
+                            ) :
+                            CupertinoActivityIndicator(animating: true, radius: 10,),
                           ),
                         ),
                         Row(
